@@ -64,7 +64,7 @@ input[type="radio"] {
   align-content: center;
 }
 
-img {
+img, video {
   width: 100%;
   height: auto;
   border-radius: 10px;
