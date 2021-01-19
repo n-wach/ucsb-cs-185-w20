@@ -49,3 +49,23 @@ input[type="submit"] {
 input[type="radio"] {
   margin: 8px;
 }
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.gallery-item {
+  width: 500px;
+  padding: 50px;
+  height: auto;
+  display: block;
+  align-content: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
