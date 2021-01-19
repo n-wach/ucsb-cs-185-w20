@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: 20px Arial;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  height: calc(40px + 20px);
+  background: #333;
+}
+
+.nav-item {
+  display: inline-block;
+  height: 20px;
+  padding: 20px 20px;
+  color: #eee;
+  text-decoration: none;
+}
+
+.nav-item.active {
+  background: #444;
+}
+
+.nav-item:hover {
+  background: #555;
+}
+
