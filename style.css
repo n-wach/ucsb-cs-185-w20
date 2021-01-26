@@ -103,9 +103,9 @@ input[type="radio"] {
 }
 
 .modal {
-  height: calc(100% - 200px);
-  width: calc(100% - 400px);
-  padding: 100px 200px;
+  height: calc(100% - 2 * min(10%, 100px));
+  width: calc(100% - 2 * min(10%, 200px));
+  padding: min(10%, 100px) min(10%, 200px);
   overflow: hidden;
   text-align: center;
 }
@@ -119,7 +119,10 @@ img, video {
 
 .modal img, .modal video {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
+  border: 10px;
+  background-color: #dddddd;
 }
 
 table {
