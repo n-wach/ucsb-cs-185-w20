@@ -57,12 +57,40 @@ input[type="radio"] {
 }
 
 .gallery-item {
-  width: 500px;
-  padding: 50px;
+  cursor: pointer;
+  position: relative;
+  width: 350px;
+  margin: 40px;
   height: auto;
   display: block;
   align-content: center;
 }
+
+.gallery-overlay {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/play_overlay.png");
+  background-size: 80px 80px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gallery-overlay:hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/play_overlay.png");
+  background-size: 90px 90px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 img, video {
   width: 100%;
