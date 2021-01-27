@@ -2,52 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CS185 Projects</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      border: 0;
-      font-family: Arial, serif;
-    }
-    body {
-      width: 100vw;
-      height: 100vh;
-    }
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      width: 100%;
-      height: 100%;
-    }
-    .project {
-      display: block;
-      width: 200px;
-      height: 20px;
-      background: linear-gradient(45deg, rgba(14,79,134,1) 0%, rgba(9,121,65,1) 35%, rgba(0,212,255,1) 100%);
-      border-radius: 5px;
-      padding: 20px;
-      font-size: 20px;
-      text-align: center;
-      color: #eee;
-      text-decoration: none;
-    }
-    h1 {
-      color: #222;
-      margin: 50px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Text</title>
 </head>
 <body>
-<div class="project-list">
-  <div>
-    <h1>Nathan's CS185 Projects</h1>
-  </div>
-  <div>
-    <a class="project" href="pr1/text.html">PR1</a>
-  </div>
+<div class="nav">
+  <a class="nav-item active" href="index.html">
+    <span>Text</span>
+  </a>
+  <a class="nav-item" href="image.html">
+    <span>Image</span>
+  </a>
+  <a class="nav-item" href="video.html">
+    <span>Video</span>
+  </a>
+  <a class="nav-item" href="table.html">
+    <span>Table</span>
+  </a>
+  <a class="nav-item" href="email.html">
+    <span>Email</span>
+  </a>
+</div>
+<div class="content">
+  <form>
+    <label>First Name:<br>
+      <input name="first-name" type="text"><br>
+    </label>
+    <br>
+    <label>Last Name:<br>
+      <input name="last-name" type="text"><br>
+    </label>
+    <br>
+    <label>Favorite Movie:<br>
+      <input name="movie" type="radio" value="avengers">Avengers<br>
+      <input name="movie" type="radio" value="dark-knight">Dark Knight<br>
+      <input name="movie" type="radio" value="tenet">Tenet<br>
+    </label>
+    <br>
+    <input type="submit" value="Done">
+  </form>
 </div>
 </body>
 </html>
