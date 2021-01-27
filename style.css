@@ -53,6 +53,8 @@ input[type="radio"] {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  align-content: center;
+  min-height: calc(100vh - 160px);
   margin: auto;
 }
 
