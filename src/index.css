@@ -75,7 +75,7 @@ input[type="radio"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("images/play_overlay.png");
+  background-image: url("assets/images/play_overlay.png");
   background-size: 80px 80px;
   background-position: center;
   background-repeat: no-repeat;
@@ -87,7 +87,7 @@ input[type="radio"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("images/play_overlay.png");
+  background-image: url("assets/images/play_overlay.png");
   background-size: 90px 90px;
   background-position: center;
   background-repeat: no-repeat;
