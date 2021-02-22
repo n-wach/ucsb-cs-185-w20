@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/ucsb-cs-185-w20/static/css/main.7f7c8089.chunk.css",
+    "main.js": "/ucsb-cs-185-w20/static/js/main.edd93fba.chunk.js",
+    "main.js.map": "/ucsb-cs-185-w20/static/js/main.edd93fba.chunk.js.map",
+    "runtime-main.js": "/ucsb-cs-185-w20/static/js/runtime-main.a8d22e20.js",
+    "runtime-main.js.map": "/ucsb-cs-185-w20/static/js/runtime-main.a8d22e20.js.map",
+    "static/js/2.46ee510e.chunk.js": "/ucsb-cs-185-w20/static/js/2.46ee510e.chunk.js",
+    "static/js/2.46ee510e.chunk.js.map": "/ucsb-cs-185-w20/static/js/2.46ee510e.chunk.js.map",
+    "index.html": "/ucsb-cs-185-w20/index.html",
+    "static/css/main.7f7c8089.chunk.css.map": "/ucsb-cs-185-w20/static/css/main.7f7c8089.chunk.css.map",
+    "static/js/2.46ee510e.chunk.js.LICENSE.txt": "/ucsb-cs-185-w20/static/js/2.46ee510e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a8d22e20.js",
+    "static/js/2.46ee510e.chunk.js",
+    "static/css/main.7f7c8089.chunk.css",
+    "static/js/main.edd93fba.chunk.js"
+  ]
+}
