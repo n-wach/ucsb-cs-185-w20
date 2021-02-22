@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ucsb-cs-185-w20/static/css/main.7f7c8089.chunk.css",
-    "main.js": "/ucsb-cs-185-w20/static/js/main.77976494.chunk.js",
-    "main.js.map": "/ucsb-cs-185-w20/static/js/main.77976494.chunk.js.map",
+    "main.js": "/ucsb-cs-185-w20/static/js/main.b7780bdb.chunk.js",
+    "main.js.map": "/ucsb-cs-185-w20/static/js/main.b7780bdb.chunk.js.map",
     "runtime-main.js": "/ucsb-cs-185-w20/static/js/runtime-main.a8d22e20.js",
     "runtime-main.js.map": "/ucsb-cs-185-w20/static/js/runtime-main.a8d22e20.js.map",
     "static/js/2.46ee510e.chunk.js": "/ucsb-cs-185-w20/static/js/2.46ee510e.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.a8d22e20.js",
     "static/js/2.46ee510e.chunk.js",
     "static/css/main.7f7c8089.chunk.css",
-    "static/js/main.77976494.chunk.js"
+    "static/js/main.b7780bdb.chunk.js"
   ]
 }
