@@ -11,15 +11,13 @@ interface AppProps {
 }
 
 interface AppState {
-  activeTab: string;
+  activeTab: any;
   scrollButtonStyle: any;
   showModal: boolean;
   modalContent: any;
 }
 
 export default class App extends React.Component<AppProps, AppState> {
-  private readonly tabs: any;
-
   constructor(props: any) {
     super(props);
 
@@ -28,21 +26,13 @@ export default class App extends React.Component<AppProps, AppState> {
     this.handleScroll = this.handleScroll.bind(this);
 
     this.state = {
-      activeTab: "Text",
+      activeTab: null,
       scrollButtonStyle: {
         opacity: 0,
         pointerEvents: "none",
       },
       showModal: false,
       modalContent: null,
-    }
-
-    this.tabs = {
-      "Text": <TextTab/>,
-      "Image": <ImageTab showModal={this.showModal}/>,
-      "Video": <VideoTab showModal={this.showModal}/>,
-      "Table": <TableTab/>,
-      "Email": <EmailTab/>,
     }
 
     window.addEventListener("scroll", this.handleScroll);
@@ -88,9 +78,9 @@ export default class App extends React.Component<AppProps, AppState> {
   render() {
     return (
       <div className="App">
-        <TabList tabs={Object.keys(this.tabs)} currentTab={this.state.activeTab} changeTab={(tab: string) => {this.setState({activeTab: tab})}}/>
+        <TabList showModal={this.showModal} setActiveTab={(tab: any) => {this.setState({activeTab: tab})}}/>
 
-        <Body tabs={this.tabs} activeTab={this.state.activeTab}/>
+        <Body activeTab={this.state.activeTab}/>
 
         {/* These components are required for functionality, but the PDF didn't say where to put them... So I'm just adding here. */}
         <div className={"scroll-button"} style={this.state.scrollButtonStyle} onClick={() => {window.scrollTo(0, 0)}}>
@@ -107,5 +97,4 @@ export default class App extends React.Component<AppProps, AppState> {
       </div>
     );
   }
-
 }
