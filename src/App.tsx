@@ -1,27 +1,40 @@
 import React from 'react';
-import './App.css';
+import Navbar from "./Navbar";
+import TextTab from "./tabs/TextTab";
+import ImageTab from "./tabs/ImageTab";
+import VideoTab from "./tabs/VideoTab";
+import TableTab from "./tabs/TableTab";
+import EmailTab from "./tabs/EmailTab";
 
-class App extends React.Component {
+interface AppProps {
+}
 
+interface AppState {
+  currentTab: string;
+}
+
+export default class App extends React.Component<AppProps, AppState> {
+  private readonly tabs: any;
+
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      currentTab: "Text",
+    }
+    this.tabs = {
+      "Text": <TextTab/>,
+      "Image": <ImageTab/>,
+      "Video": <VideoTab/>,
+      "Table": <TableTab/>,
+      "Email": <EmailTab/>,
+    }
+  }
   render() {
     return (
         <div className="App">
-          <header className="App-header">
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-            </p>
-            <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
+          <Navbar tabs={Object.keys(this.tabs)} currentTab={this.state.currentTab} changeTab={(tab: string) => {this.setState({currentTab: tab})}}/>
+            {this.tabs[this.state.currentTab]}
         </div>
     );
   }
 }
-
-export default App;

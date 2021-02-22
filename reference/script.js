@@ -54,16 +54,3 @@ document.onscroll = () => {
         scrollButton.style.pointerEvents = "none";
     }
 }
-
-function checkEmail(event) {
-    event.preventDefault();
-    let status = document.querySelector("span.error");
-    let email = document.querySelector("input[name='email']").value;
-    if (email.indexOf("@") !== -1 && (email.endsWith(".com") || email.endsWith(".edu"))) {
-        status.textContent = "Email successfully recorded.";
-        status.style.color = "green";
-    } else {
-        status.textContent = "Invalid email address.";
-        status.style.color = "red";
-    }
-}
