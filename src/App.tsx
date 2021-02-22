@@ -12,6 +12,8 @@ interface AppProps {
 interface AppState {
   currentTab: string;
   scrollButtonStyle: any;
+  showModal: boolean;
+  modalContent: any;
 }
 
 export default class App extends React.Component<AppProps, AppState> {
@@ -19,21 +21,29 @@ export default class App extends React.Component<AppProps, AppState> {
 
   constructor(props: any) {
     super(props);
+
+    this.showModal = this.showModal.bind(this);
+    this.hideModal = this.hideModal.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+
     this.state = {
       currentTab: "Text",
       scrollButtonStyle: {
         opacity: 0,
         pointerEvents: "none",
       },
+      showModal: false,
+      modalContent: null,
     }
+
     this.tabs = {
       "Text": <TextTab/>,
-      "Image": <ImageTab/>,
-      "Video": <VideoTab/>,
+      "Image": <ImageTab showModal={this.showModal}/>,
+      "Video": <VideoTab showModal={this.showModal}/>,
       "Table": <TableTab/>,
       "Email": <EmailTab/>,
     }
-    this.handleScroll = this.handleScroll.bind(this);
+
     window.addEventListener("scroll", this.handleScroll);
   }
 
@@ -56,19 +66,41 @@ export default class App extends React.Component<AppProps, AppState> {
     }
   }
 
+  showModal(content: any) {
+    this.setState({
+      showModal: true,
+      modalContent: content,
+    });
+  }
+
+  hideModal() {
+    this.setState({
+      showModal: false,
+      modalContent: null,
+    });
+  }
+
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   }
 
   render() {
     return (
-        <div className="App">
-          <Navbar tabs={Object.keys(this.tabs)} currentTab={this.state.currentTab} changeTab={(tab: string) => {this.setState({currentTab: tab})}}/>
-            {this.tabs[this.state.currentTab]}
-            <div className={"scroll-button"} style={this.state.scrollButtonStyle} onClick={() => {window.scrollTo(0, 0)}}>
-              Scroll to Top
-            </div>
+      <div className="App">
+        <Navbar tabs={Object.keys(this.tabs)} currentTab={this.state.currentTab} changeTab={(tab: string) => {this.setState({currentTab: tab})}}/>
+        {this.tabs[this.state.currentTab]}
+        <div className={"scroll-button"} style={this.state.scrollButtonStyle} onClick={() => {window.scrollTo(0, 0)}}>
+          Scroll to Top
         </div>
+        {
+          this.state.showModal &&
+          <div className={"modal-back"} onClick={this.hideModal}>
+            <div className={"modal"}>
+              {this.state.modalContent}
+            </div>
+          </div>
+        }
+      </div>
     );
   }
 

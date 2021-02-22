@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface VideoTabProps {
-
+  showModal(content: any): void;
 }
 
 export default class VideoTab extends React.Component<VideoTabProps> {
@@ -19,12 +19,21 @@ export default class VideoTab extends React.Component<VideoTabProps> {
     ]
   }
 
+  showVideo(videoUrl: string) {
+    this.props.showModal(
+      <video onClick={(event) => {event.stopPropagation()}} autoPlay={true} controls={true}>
+        <source src={videoUrl} type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+    );
+  }
+
   render() {
     return (
       <div className="content">
         <div className="gallery">
           {this.videos.map((videoUrl) =>
-          <div key={videoUrl} className="gallery-item">
+          <div key={videoUrl} className="gallery-item" onClick={this.showVideo.bind(this, videoUrl)}>
             <video>
               <source src={videoUrl} type="video/mp4"/>
               Your browser does not support the video tag.
