@@ -1,18 +1,41 @@
 import React from 'react';
+import TextTab from "./tabs/TextTab";
+import ImageTab from "./tabs/ImageTab";
+import VideoTab from "./tabs/VideoTab";
+import TableTab from "./tabs/TableTab";
+import EmailTab from "./tabs/EmailTab";
 
-interface NavbarProps {
-  tabs: string[];
-  currentTab: string;
-  changeTab(tab: string): void;
+interface TabListProps {
+  setActiveTab(tab: string): void;
+  showModal(content: any): void;
 }
 
-export default class TabList extends React.Component<NavbarProps> {
+interface TabListState {
+  activeTabName: string;
+}
+
+export default class TabList extends React.Component<TabListProps, TabListState> {
+  private tabs: any;
+  constructor(props: TabListProps) {
+    super(props);
+    this.state = {
+      activeTabName: "Text",
+    };
+    this.tabs = {
+      "Text": <TextTab/>,
+      "Image": <ImageTab showModal={this.props.showModal}/>,
+      "Video": <VideoTab showModal={this.props.showModal}/>,
+      "Table": <TableTab/>,
+      "Email": <EmailTab/>,
+    }
+    this.changeTab("Text");
+  }
   render() {
     return (
       <div className="nav">
         {
-          this.props.tabs.map((tabName: string) =>
-          <a key={tabName} className={"nav-item" + (tabName == this.props.currentTab ? " active" : "")} onClick={this.changeTab.bind(this, tabName)}>
+          Object.keys(this.tabs).map((tabName: string) =>
+          <a key={tabName} className={"nav-item" + (tabName == this.state.activeTabName ? " active" : "")} onClick={this.changeTab.bind(this, tabName)}>
             <span>{tabName}</span>
           </a>)
         }
@@ -20,6 +43,9 @@ export default class TabList extends React.Component<NavbarProps> {
     );
   }
   changeTab(name: string) {
-    this.props.changeTab(name);
+    this.setState({
+      activeTabName: name,
+    });
+    this.props.setActiveTab(this.tabs[name]);
   }
 }
