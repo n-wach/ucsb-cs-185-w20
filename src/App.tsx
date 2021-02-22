@@ -1,16 +1,17 @@
 import React from 'react';
-import Navbar from "./Navbar";
+import TabList from "./TabList";
 import TextTab from "./tabs/TextTab";
 import ImageTab from "./tabs/ImageTab";
 import VideoTab from "./tabs/VideoTab";
 import TableTab from "./tabs/TableTab";
 import EmailTab from "./tabs/EmailTab";
+import Body from './Body';
 
 interface AppProps {
 }
 
 interface AppState {
-  currentTab: string;
+  activeTab: string;
   scrollButtonStyle: any;
   showModal: boolean;
   modalContent: any;
@@ -27,7 +28,7 @@ export default class App extends React.Component<AppProps, AppState> {
     this.handleScroll = this.handleScroll.bind(this);
 
     this.state = {
-      currentTab: "Text",
+      activeTab: "Text",
       scrollButtonStyle: {
         opacity: 0,
         pointerEvents: "none",
@@ -87,8 +88,11 @@ export default class App extends React.Component<AppProps, AppState> {
   render() {
     return (
       <div className="App">
-        <Navbar tabs={Object.keys(this.tabs)} currentTab={this.state.currentTab} changeTab={(tab: string) => {this.setState({currentTab: tab})}}/>
-        {this.tabs[this.state.currentTab]}
+        <TabList tabs={Object.keys(this.tabs)} currentTab={this.state.activeTab} changeTab={(tab: string) => {this.setState({activeTab: tab})}}/>
+
+        <Body tabs={this.tabs} activeTab={this.state.activeTab}/>
+
+        {/* These components are required for functionality, but the PDF didn't say where to put them... So I'm just adding here. */}
         <div className={"scroll-button"} style={this.state.scrollButtonStyle} onClick={() => {window.scrollTo(0, 0)}}>
           Scroll to Top
         </div>

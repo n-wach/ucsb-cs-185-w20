@@ -6,7 +6,7 @@ interface NavbarProps {
   changeTab(tab: string): void;
 }
 
-export default class Navbar extends React.Component<NavbarProps> {
+export default class TabList extends React.Component<NavbarProps> {
   render() {
     return (
       <div className="nav">
