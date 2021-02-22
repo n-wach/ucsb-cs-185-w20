@@ -33,24 +33,3 @@ document.querySelectorAll(".gallery-item").forEach(
         })
     }
 );
-
-let scrollButton = document.createElement("div");
-scrollButton.classList.add("scroll-button");
-scrollButton.textContent = "Scroll to Top";
-scrollButton.style.opacity = "0";
-scrollButton.style.pointerEvents = "none";
-scrollButton.onclick = () => {
-    window.scrollTo(0, 0);
-}
-document.body.appendChild(scrollButton);
-
-document.onscroll = () => {
-    let scroll = window.pageYOffset / window.innerHeight;
-    if(scroll > 0.25) {
-        scrollButton.style.opacity = "1";
-        scrollButton.style.pointerEvents = "all";
-    } else {
-        scrollButton.style.opacity = "0";
-        scrollButton.style.pointerEvents = "none";
-    }
-}
