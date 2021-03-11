@@ -4,6 +4,7 @@ import ImageTab from "./tabs/ImageTab";
 import VideoTab from "./tabs/VideoTab";
 import TableTab from "./tabs/TableTab";
 import EmailTab from "./tabs/EmailTab";
+import ZoomTab from "./tabs/ZoomTab";
 
 interface TabListProps {
   setActiveTab(tab: string): void;
@@ -27,6 +28,7 @@ export default class TabList extends React.Component<TabListProps, TabListState>
       "Video": <VideoTab showModal={this.props.showModal}/>,
       "Table": <TableTab/>,
       "Email": <EmailTab/>,
+      "Zoom": <ZoomTab/>,
     }
     this.changeTab("Text");
   }

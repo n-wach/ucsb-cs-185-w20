@@ -14,7 +14,7 @@ export default class VideoTab extends React.Component<VideoTabProps> {
       process.env.PUBLIC_URL + "/videos/megalovania_synth.mp4",
       process.env.PUBLIC_URL + "/videos/water.mp4",
       "https://www.w3schools.com/html/mov_bbb.mp4",
-      "http://media.w3.org/2010/05/sintel/trailer.mp4",
+      "https://media.w3.org/2010/05/sintel/trailer.mp4",
       "https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4",
     ]
   }
